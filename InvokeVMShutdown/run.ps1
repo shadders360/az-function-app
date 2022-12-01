@@ -7,6 +7,8 @@ $currentUTCtime = (Get-Date).ToUniversalTime()
 # az group list --query "[?location=='uksouth']" -o table
 Write-Host "Process list of VM's"
 
+$PSVersionTable
+
 # The 'IsPastDue' porperty is 'true' when the current function invocation is later than scheduled.
 if ($Timer.IsPastDue) {
     Write-Host "PowerShell timer is running late!"
