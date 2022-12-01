@@ -8,8 +8,15 @@ $currentUTCtime = (Get-Date).ToUniversalTime()
 Write-Host "Process list of VM's"
 
 $PSVersionTable
-Get-InstalledModule -Name Az
-Get-AzResourceGroup -Name az*
+# Get-InstalledModule -Name Az
+try {
+    Get-AzResourceGroup -Name az*
+    Get-VM | Where { $_.State –eq ‘Running’ }
+}
+catch {
+    {1:<#Do this if a terminating exception happens#>}
+}
+
 
 # The 'IsPastDue' porperty is 'true' when the current function invocation is later than scheduled.
 if ($Timer.IsPastDue) {
