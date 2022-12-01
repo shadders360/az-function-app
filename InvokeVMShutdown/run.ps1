@@ -10,8 +10,9 @@ Write-Host "Process list of VM's"
 $PSVersionTable
 # Get-InstalledModule -Name Az
 try {
-    Get-AzResourceGroup -Name az*
-    Get-VM | Where { $_.State –eq ‘Running’ }
+   
+    Get-AzVM -ResourceGroupName "rg-core"
+    Get-AzVM -ResourceGroupName "rg-core" -Status
 }
 catch {
     {1:<#Do this if a terminating exception happens#>}

@@ -18,7 +18,8 @@
 			"extensions": [
 				"ms-azuretools.vscode-azurefunctions",
 				"ms-vscode.powershell",
-                "ms-azuretools.vscode-azurestorage"
+                "ms-azuretools.vscode-azurestorage",
+                "ms-vscode-remote.remote-containers"
 			]
 		}
 	},
